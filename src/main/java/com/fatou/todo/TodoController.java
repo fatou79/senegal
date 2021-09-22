@@ -34,7 +34,14 @@ TodoService match;
 		match.addTodo("senegal", desc, new Date(), false);
 		model.clear();
 		return "redirect:list-todo";
-
-
 }
+	
+	@RequestMapping(value = "/delete-todo",method = RequestMethod.GET)
+	public String deletetodo( @RequestParam int id) {
+		match.deleteTodo(id);
+		return "redirect:list-todo";
+}
+	
+	
+	
 }
